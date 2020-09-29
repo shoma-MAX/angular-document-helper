@@ -1,2 +1,7 @@
-これは文章の上達を支援するツールです<br>
-<input type="textarea">
+これは文章の上達を支援するツールです(作成中）<br>
+ <textarea [(ngModel)]="inputarea" placeholder="type here"rows="15"cols="50"(input)="input()" >
+ </textarea>
+
+ {{inputarea}}
+ {{message}}
+ 
