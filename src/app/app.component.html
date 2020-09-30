@@ -1,7 +1,10 @@
 これは文章の上達を支援するツールです(作成中）<br>
- <textarea [(ngModel)]="inputarea" placeholder="type here"rows="15"cols="50"(input)="input()" >
- </textarea>
+一文あたりの文字数が設定した文字数をオーバーすると警告をだします。<br>
+こんご、語尾の乱れや指示語などを検知して指摘を行う機能をつけようと思っています。<br>
+1文当たりの文字数上限<input type="range" [(ngModel)]="upperlength" min="0" max="30">
+{{upperlength}}<br>
+ <textarea [(ngModel)]="inputarea" placeholder="type here"rows="20"cols="90"(input)="input()" >
+ </textarea><br>
 
- {{inputarea}}
- {{message}}
+<!--ここに、ngForで入力された文章と指摘事項を書き出す。-->
  
