@@ -4,14 +4,15 @@
 目標とする文字数:<input type="number" [(ngModel)]="goal"><br>
 1文当たりの文字数上限<input type="range" [(ngModel)]="upperlength" min="0" max="30">
 {{upperlength}}<br>
- <textarea [(ngModel)]="inputarea" placeholder="type here"rows="20"cols="90"(input)="input()" >
- </textarea><br>
- トータル文字数{{inputarea.length}}
  <div class="box" *ngIf="tooLongBoolean">1文当たりの文字数が多すぎます。</div>
  <div class="box" *ngIf="gobiBoolean">語尾が乱れています。</div>
  <div class="bluebox" *ngIf="demoBoolean">指示語は明確ですか？</div>
  <div class="box14" *ngIf="fivehundred">おめでとう！500文字オーバー</div>
  <div class="box14" *ngIf="thousand">おめでとう！1000文字オーバー</div>
   <div class="box14" *ngIf="goalBoolean">おめでとう！目標文字数達成！</div>
+
+ <textarea [(ngModel)]="inputarea" placeholder="type here"rows="20"cols="90"(input)="input()" >
+ </textarea><br>
+ トータル文字数{{inputarea.length}}
 
 
