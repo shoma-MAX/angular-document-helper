@@ -11,7 +11,7 @@ export class AppComponent {
   outputarea;
   public message: string[];
   public inputarray: string[];
-  public upperlength: number = 20;
+  public upperlength: number = 40;
   public output: string;
   public tooLongBoolean: boolean;
   public gobiBoolean: boolean;
