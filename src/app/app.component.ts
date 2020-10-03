@@ -18,13 +18,28 @@ export class AppComponent {
   public gobiList: string[][];
   public demonstrative: string[] = ["それ", "これ", "あれ", "その","そこ","あそこ","あの"];
   public demoBoolean: boolean;
+  public fivehundred:boolean;
+  public thousand:boolean;
+  public goalBoolean:boolean;
+  public goal:number=1000;
 
   ngDoCheck() {
     //console.log('Running change detection ', Date.now());
     // console.log(this.inputarea);
   }
   input() {
-    // this.inputarea.length
+    if(this.inputarea.length>500){
+      this.fivehundred=true
+
+    }
+    if(this.inputarea.length>1000){
+      this.thousand=true
+
+    }
+
+    if(this.inputarea.length>this.goal){
+      this.goalBoolean=true;
+    }
 
     //"。"で区切って配列に収容している。
     const inputarray = this.inputarea.split("。");

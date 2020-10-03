@@ -1,6 +1,7 @@
 これは文章の上達を支援するツールです(作成中）<br>
 一文あたりの文字数が設定した文字数をオーバーすると警告をだします。<br>
 <br>
+目標とする文字数:<input type="number" [(ngModel)]="goal"><br>
 1文当たりの文字数上限<input type="range" [(ngModel)]="upperlength" min="0" max="30">
 {{upperlength}}<br>
  <textarea [(ngModel)]="inputarea" placeholder="type here"rows="20"cols="90"(input)="input()" >
@@ -9,4 +10,8 @@
  <div class="box" *ngIf="tooLongBoolean">1文当たりの文字数が多すぎます。</div>
  <div class="box" *ngIf="gobiBoolean">語尾が乱れています。</div>
  <div class="bluebox" *ngIf="demoBoolean">指示語は明確ですか？</div>
+ <div class="box14" *ngIf="fivehundred">おめでとう！500文字オーバー</div>
+ <div class="box14" *ngIf="thousand">おめでとう！1000文字オーバー</div>
+  <div class="box14" *ngIf="goalBoolean">おめでとう！目標文字数達成！</div>
+
 
