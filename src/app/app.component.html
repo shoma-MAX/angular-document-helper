@@ -6,5 +6,7 @@
  <textarea [(ngModel)]="inputarea" placeholder="type here"rows="20"cols="90"(input)="input()" >
  </textarea><br>
 
+ <div *ngIf="tooLongBoolean">1文当たりの文字数が多すぎます。</div>
+
 <!--ここに、ngForで入力された文章と指摘事項を書き出す。-->
  

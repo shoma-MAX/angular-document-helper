@@ -14,6 +14,7 @@ export class AppComponent  {
   public inputarray:string[];
   public upperlength:number=20;
   public output:string;
+  public tooLongBoolean:boolean;
 
   
   
@@ -28,39 +29,29 @@ export class AppComponent  {
 
     //"。"で区切って配列に収容している。
     const inputarray=this.inputarea.split("。");
-    //console.log(inputarray)
+    console.log(inputarray)
     //"。"で区切った3つ目の文字列をコンソールに出力するテストコード
    // console.log(inputarray [2].length)
     //console.log(this.inputarea.length)
-     for(var i=1;i< 10;i++){
- 
-       if(inputarray[i].length>this.upperlength){
-      this.setMessage("長すぎます");
-      //console.log(this.message[i])
-     }else{
-       this.message[i]="　"
-    //   //IDEA:messageも配列にすればいい。配列にしたうえで、aggridかngForで表示する。
-     }//あまりいい実装とはいえない、。ngIfなどほかの方法を検討するべき。
-     }
-    
+    for(var i=0;i<inputarray.length;i++){
+      var j=0;
+      console.log(inputarray[i].length)
+      if(inputarray[i].length>this.upperlength){
+        this.tooLongBoolean=true;
+        break;
+      }else{
+        this.tooLongBoolean=false;
+      }
+      
+      
+    }
+     
      
    
-    }
-    ngOnInit(){
-     for(var i=0;i<10;i++){
-       this.output+=this.message[i]
-       console.log(this.message[i])
-     }
-    
-    }
-     setMessage(message:string):string{
-       this.output+=message;
-       console.log(message)
-       return this.output
-
-
-     }
+   
+  
   }
+}
   
 
 
