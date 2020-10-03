@@ -12,7 +12,8 @@ export class AppComponent  {
   outputarea
   public message:string[];
   public inputarray:string[];
-  public upperlength:number;
+  public upperlength:number=20;
+  public output:string;
 
   
   
@@ -23,22 +24,44 @@ export class AppComponent  {
   }
   input(){
 
-    this.inputarea.length
+   // this.inputarea.length
 
     //"。"で区切って配列に収容している。
     const inputarray=this.inputarea.split("。");
+    //console.log(inputarray)
     //"。"で区切った3つ目の文字列をコンソールに出力するテストコード
    // console.log(inputarray [2].length)
     //console.log(this.inputarea.length)
-    for(var i=0;i<inputarray.length;i++){
-    if(inputarray[i].length>this.upperlength){
-      this.message[i]="1文あたりの文字数が長すぎます"
-    }else{
-      this.message[i]=""
-      //IDEA:messageも配列にすればいい。配列にしたうえで、aggridかngForで表示する。
-    }//あまりいい実装とはいえない、。ngIfなどほかの方法を検討するべき。
+     for(var i=1;i< 10;i++){
+ 
+       if(inputarray[i].length>this.upperlength){
+      this.setMessage("長すぎます");
+      //console.log(this.message[i])
+     }else{
+       this.message[i]="　"
+    //   //IDEA:messageも配列にすればいい。配列にしたうえで、aggridかngForで表示する。
+     }//あまりいい実装とはいえない、。ngIfなどほかの方法を検討するべき。
+     }
+    
+     
+   
     }
+    ngOnInit(){
+     for(var i=0;i<10;i++){
+       this.output+=this.message[i]
+       console.log(this.message[i])
+     }
+    
+    }
+     setMessage(message:string):string{
+       this.output+=message;
+       console.log(message)
+       return this.output
+
+
+     }
   }
+  
 
 
-}
+
